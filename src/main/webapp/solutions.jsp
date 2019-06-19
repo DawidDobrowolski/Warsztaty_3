@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf"%>
+<%@include file="fragments/header.jspf" %>
 
 <a href="/solutions/add">Dodaj nowe rozwiazanie</a>
 <br><br>
@@ -22,19 +22,23 @@
     <tr>
         <th>Excercise</th>
         <th>User</th>
-        <th>Description</th>
+        <th>Update date</th>
         <th>Actions</th>
     </tr>
-<c:forEach items="${solutions}" var="solution">
-    <td>${solution.exercise.title}</td>
-    <td>${solution.user.username}</td>
-    <td>${solution.description}</td>
-    <td><a href="/solutions/update?id=${solution.id}">Modyfikuj</a>
-    <a href="/solutions/delete?id=${solution.id}">Usun</a></td>
-
-</c:forEach>
+    <c:forEach items="${solutions}" var="solution">
+        <tr>
+            <td>${solution.exercise.title}</td>
+            <td>${solution.user.username}</td>
+            <td>${solution.updated}</td>
+            <td>
+                <a href="/solutions/details?id=${solution.id}">Szczegoly</a>
+                <a href="/solutions/update?id=${solution.id}">Modyfikuj</a>
+                <a href="/solutions/delete?id=${solution.id}">Usun</a>
+            </td>
+        </tr>
+    </c:forEach>
 </table>
-<%@include file="fragments/footer.jspf"%>
+<%@include file="fragments/footer.jspf" %>
 
 </body>
 </html>

@@ -17,8 +17,11 @@ public class HomeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int homeNumberOfSolutions = Integer.parseInt(getServletContext().getInitParameter("homeNumberOfSolutions"));
+
         SolutionDao dao = new SolutionDao();
-        Solution[] solutions = dao.findAll();
+        Solution[] solutions = dao.findNumberOf(homeNumberOfSolutions);
+
         request.setAttribute("solutions", solutions);
         getServletContext().getRequestDispatcher("/solutions.jsp")
                 .forward(request,response);

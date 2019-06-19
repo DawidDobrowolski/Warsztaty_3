@@ -25,6 +25,8 @@ public class SolutionDao {
             "SELECT * FROM solutions WHERE user_id <> ?";
     private static final String FIND_ALL_BY_EXERCISE_ID_QUERY =
             "SELECT * FROM solutions WHERE exercise_id = ?";
+    private static final String FIND_NUMBER_OF_SOLUTION_QUERY =
+            "SELECT * FROM solutions ORDER BY updated DESC LIMIT ?";
 
     public Solution create(Solution solution) {
         try (Connection connect = DbUtil.getConn()) {
@@ -105,6 +107,19 @@ public class SolutionDao {
     public Solution[] findAll() {
         try (Connection connect = DbUtil.getConn()) {
             PreparedStatement preStat = connect.prepareStatement(FIND_ALL_SOLUTION_QUERY);
+            Solution[] solutions = findAllgetInf(preStat);
+            return solutions;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    public Solution[] findNumberOf(int limit) {
+        try (Connection connect = DbUtil.getConn()) {
+            PreparedStatement preStat = connect.prepareStatement(FIND_NUMBER_OF_SOLUTION_QUERY);
+            preStat.setInt(1, limit);
             Solution[] solutions = findAllgetInf(preStat);
             return solutions;
         } catch (SQLException e) {

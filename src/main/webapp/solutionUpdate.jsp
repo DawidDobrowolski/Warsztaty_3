@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: dawid
-  Date: 6/14/19
-  Time: 4:49 PM
+  Date: 6/19/19
+  Time: 10:04 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -14,13 +14,15 @@
 <body>
 <%@include file="fragments/header.jspf"%>
 
-<form method="post" action="/solutions/add">
+<form method="post" action="/solutions/update">
     <div>
         <h2>Prosze wybrac cwiczenie: </h2>
-        <select name="exercise">
+        <select name="exercise" >
 
             <c:forEach items="${exercises}" var="ex">
-                <option value="${ex.id}">${ex.title}</option>
+                <option
+                        <c:if test="${ex.id == exercise.id}">selected</c:if>
+                        value="${ex.id}">${ex.title}</option>
             </c:forEach>
         </select>
     </div>
@@ -30,7 +32,9 @@
         <select name="user">
 
             <c:forEach items="${users}" var="us">
-                <option value="${us.id}">${us.username}</option>
+                <option
+                        <c:if test="${us.id == user.id}">selected</c:if>
+                        value="${us.id}">${us.username}</option>
             </c:forEach>
         </select>
     </div>
@@ -38,10 +42,10 @@
     <div>
         <h2>Opis rozwiazania: </h2>
         <textarea name="description" rows="4" cols="50" placeholder="Prosze wpisac opis rozwiazania...">
-</textarea>
+${description}</textarea>
     </div>
     <br>
-    <input type="submit" value="Dodaj rozwiazanie">
+    <input type="submit" value="Edytuj rozwiazanie">
 </form>
 <%@include file="fragments/footer.jspf"%>
 </body>
