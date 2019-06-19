@@ -1,0 +1,28 @@
+package pl.coderslab.controller;
+
+import pl.coderslab.dao.SolutionDao;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet("/solutions/delete")
+public class Solutions_delete extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+     int id = Integer.parseInt(request.getParameter("id"));
+
+
+        SolutionDao dao = new SolutionDao();
+        dao.delete(id);
+        response.sendRedirect("/");
+
+
+    }
+}
