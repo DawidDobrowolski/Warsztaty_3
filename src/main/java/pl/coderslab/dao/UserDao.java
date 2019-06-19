@@ -1,6 +1,7 @@
 package pl.coderslab.dao;
 
 
+import pl.coderslab.model.Group;
 import pl.coderslab.model.User;
 
 import java.sql.*;
@@ -27,7 +28,7 @@ public class UserDao {
         try (Connection connect = DbUtil.getConn()) {
             PreparedStatement preStat =
                     connect.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);
-            preStat.setInt(1, user.getUserGroupId());
+            preStat.setInt(1, user.getGroup().getId());
             preStat.setString(2, user.getUsername());
             preStat.setString(3, user.getEmail());
             preStat.setString(4, user.getPassword());
@@ -52,7 +53,12 @@ public class UserDao {
             if (resultSet.next()) {
                 User user = new User();
                 user.setId(resultSet.getInt("id"));
-                user.setUserGroupId(resultSet.getInt("user_group_id"));
+
+                GroupDao groupDao = new GroupDao();
+                int groupId = resultSet.getInt("user_group_id");
+                Group group = groupDao.read(groupId);
+                user.setGroup(group);
+
                 user.setUsername(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
@@ -73,6 +79,13 @@ public class UserDao {
             if (resultSet.next()) {
                 User user = new User();
                 user.setId(resultSet.getInt("id"));
+
+                GroupDao groupDao = new GroupDao();
+                int groupId = resultSet.getInt("user_group_id");
+                Group group = groupDao.read(groupId);
+                user.setGroup(group);
+
+                user.setUsername(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
                 user.setAdmin(resultSet.getString("admin"));
@@ -87,7 +100,7 @@ public class UserDao {
     public void update(User user) {
         try (Connection connect = DbUtil.getConn()) {
             PreparedStatement preStat = connect.prepareStatement(UPDATE_USER_QUERY);
-            preStat.setInt(1, user.getUserGroupId());
+            preStat.setInt(1, user.getGroup().getId());
             preStat.setString(2, user.getUsername());
             preStat.setString(3, user.getEmail());
             preStat.setString(4, user.getPassword());
@@ -138,7 +151,12 @@ public class UserDao {
             while (resultSet.next()) {
                 User user = new User();
                 user.setId(resultSet.getInt("id"));
-                user.setUserGroupId(resultSet.getInt("user_group_id"));
+
+                GroupDao groupDao = new GroupDao();
+                int groupId = resultSet.getInt("user_group_id");
+                Group group = groupDao.read(groupId);
+                user.setGroup(group);
+
                 user.setUsername(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));

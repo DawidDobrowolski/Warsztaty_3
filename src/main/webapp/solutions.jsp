@@ -20,14 +20,14 @@
 
 <table border="1">
     <tr>
-        <th>Excercise id</th>
-        <th>User id</th>
+        <th>Excercise</th>
+        <th>User</th>
         <th>Description</th>
         <th>Actions</th>
     </tr>
 <c:forEach items="${solutions}" var="solution">
-    <td>${solution.exerciseId}</td>
-    <td>${solution.userId}</td>
+    <td>${solution.exercise.title}</td>
+    <td>${solution.user.username}</td>
     <td>${solution.description}</td>
     <td><a href="/solutions/update?id=${solution.id}">Modyfikuj</a>
     <a href="/solutions/delete?id=${solution.id}">Usun</a></td>

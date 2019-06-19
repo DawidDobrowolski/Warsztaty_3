@@ -5,8 +5,8 @@ import java.sql.Timestamp;
 public class Solution {
 
     private int id;
-    private int exerciseId;
-    private int userId;
+    private Exercise exercise;
+    private User user;
     private Timestamp created;
     private Timestamp updated;
     private String description;
@@ -15,9 +15,9 @@ public class Solution {
 
     }
 
-    public Solution(int exerciseId, int userId, String description) {
-        this.exerciseId = exerciseId;
-        this.userId = userId;
+    public Solution(Exercise exercise, User user, String description) {
+        this.exercise = exercise;
+        this.user = user;
         this.created = new Timestamp(System.currentTimeMillis());
         this.updated = this.created;
         this.description = description;
@@ -31,20 +31,20 @@ public class Solution {
         this.id = id;
     }
 
-    public int getExerciseId() {
-        return exerciseId;
+    public Exercise getExercise() {
+        return exercise;
     }
 
-    public void setExerciseId(int exerciseId) {
-        this.exerciseId = exerciseId;
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Timestamp getCreated() {
