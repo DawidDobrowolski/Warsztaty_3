@@ -6,7 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<a href="/">Strona glowna</a>
-<a href="/groups">Grupy</a>
+
+<a href="/">Strona glowna</a> &nbsp;
+<a href="/groups">Grupy</a> &nbsp;
 <a href="/admin">Panel Administratora</a>
 <br><br>
+<a href="#" onclick="history.go(-1)">Powrot</a>
+<br>
+<hr>
