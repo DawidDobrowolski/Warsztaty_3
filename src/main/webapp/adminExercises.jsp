@@ -3,7 +3,7 @@
   Created by IntelliJ IDEA.
   User: dawid
   Date: 6/20/19
-  Time: 9:09 AM
+  Time: 11:08 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -14,24 +14,21 @@
 <body>
 <%@include file="fragments/header.jspf" %>
 <br>
-<a href="/admin/users/add">Dodaj nowego uzytkownika</a>
+<a href="/admin/exercises/add">Dodaj nowe zadanie </a>
 <br>
-<h2>Lista uzytkownikow: </h2>
+<h2>Lista zadan: </h2>
 <table border="1">
     <tr>
-        <th>Nazwa uzytkownika</th>
-        <th>E-mail</th>
-        <th>Grupa</th>
+        <th>Nazwa zadania</th>
         <th>Actions</th>
     </tr>
-    <c:forEach items="${users}" var="us">
+    <c:forEach items="${exercises}" var="exercise">
         <tr>
-            <td>${us.username}</td>
-            <td>${us.email}</td>
-            <td>${us.group.name}</td>
+            <td>${exercise.title}</td>
             <td>
-                <a href="/admin/users/update?id=${us.id}">Edytuj</a>
-                <a href="/admin/users/delete?id=${us.id}">Usun</a>
+                <a href="/admin/exercises/details?id=${exercise.id}">Szczegoly</a>
+                <a href="/admin/exercises/update?id=${exercise.id}">Edytuj</a>
+                <a href="/admin/exercises/delete?id=${exercise.id}">Usun</a>
             </td>
         </tr>
     </c:forEach>
