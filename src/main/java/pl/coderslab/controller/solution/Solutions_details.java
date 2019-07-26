@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.solution;
 
 import pl.coderslab.dao.SolutionDao;
 import pl.coderslab.model.Exercise;

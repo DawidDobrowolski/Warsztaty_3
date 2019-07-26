@@ -1,9 +1,7 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.user;
 
-import pl.coderslab.dao.ExerciseDao;
-import pl.coderslab.dao.GroupDao;
-import pl.coderslab.model.Exercise;
-import pl.coderslab.model.Group;
+import pl.coderslab.dao.UserDao;
+import pl.coderslab.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,18 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/admin/exercises")
-public class Admin_exercises extends HttpServlet {
+@WebServlet("/groups/users")
+public class Users_home extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ExerciseDao dao = new ExerciseDao();
-        Exercise[] exercises = dao.findAll();
+        int groupId = Integer.parseInt(request.getParameter("id"));
 
-        request.setAttribute("exercises", exercises);
-        getServletContext().getRequestDispatcher("/adminExercises.jsp")
+        UserDao dao = new UserDao();
+        User[] users = dao.findAllByGroupID(groupId);
+
+        request.setAttribute("users", users);
+        getServletContext().getRequestDispatcher("/users.jsp")
                 .forward(request,response);
     }
 }

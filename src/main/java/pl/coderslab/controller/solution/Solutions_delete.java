@@ -1,7 +1,6 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.solution;
 
-import pl.coderslab.dao.GroupDao;
-import pl.coderslab.model.Group;
+import pl.coderslab.dao.SolutionDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,20 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/admin/groups/add")
-public class Admin_groupsAdd extends HttpServlet {
+@WebServlet("/solutions/delete")
+public class Solutions_delete extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        Group group = new Group(name);
 
-        GroupDao groupDao = new GroupDao();
-        groupDao.create(group);
-
-        response.sendRedirect("/admin/groups");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/adminGroups_Add.jsp");
+     int id = Integer.parseInt(request.getParameter("id"));
+
+
+        SolutionDao dao = new SolutionDao();
+        dao.delete(id);
+        response.sendRedirect("/");
+
 
     }
 }

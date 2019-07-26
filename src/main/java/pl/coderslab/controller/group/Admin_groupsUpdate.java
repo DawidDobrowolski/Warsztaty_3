@@ -1,6 +1,7 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.group;
 
 import pl.coderslab.dao.GroupDao;
+import pl.coderslab.model.Group;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/admin/groups/delete")
-public class Admin_groupsDelete extends HttpServlet {
+@WebServlet("/admin/groups/update")
+public class Admin_groupsUpdate extends HttpServlet {
+
+    Group group;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        group.setName(name);
+
+        GroupDao groupDao = new GroupDao();
+        groupDao.update(group);
+
+        response.sendRedirect("/admin/groups");
+
 
     }
 
@@ -19,8 +31,11 @@ public class Admin_groupsDelete extends HttpServlet {
         int groupId = Integer.parseInt(request.getParameter("id"));
 
         GroupDao groupDao = new GroupDao();
-        groupDao.delete(groupId);
+        group = groupDao.read(groupId);
 
-        response.sendRedirect("/admin/groups");
+        request.setAttribute("group", group);
+        getServletContext().getRequestDispatcher("/adminGroups_Update.jsp")
+                .forward(request, response);
+
     }
 }

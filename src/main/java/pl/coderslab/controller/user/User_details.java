@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.user;
 
 import pl.coderslab.dao.SolutionDao;
 import pl.coderslab.dao.UserDao;

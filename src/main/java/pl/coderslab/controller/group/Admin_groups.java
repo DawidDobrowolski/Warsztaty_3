@@ -1,7 +1,7 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.group;
 
-import pl.coderslab.dao.UserDao;
-import pl.coderslab.model.User;
+import pl.coderslab.dao.GroupDao;
+import pl.coderslab.model.Group;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,18 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/admin/users")
-public class Admin_users extends HttpServlet {
+@WebServlet("/admin/groups")
+public class Admin_groups extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDao dao = new UserDao();
-        User[] users = dao.findAll();
+        GroupDao dao = new GroupDao();
+        Group[] groups = dao.findAll();
 
-        request.setAttribute("users", users);
-        getServletContext().getRequestDispatcher("/adminUsers.jsp")
+        request.setAttribute("groups", groups);
+        getServletContext().getRequestDispatcher("/adminGroups.jsp")
                 .forward(request,response);
     }
 }
