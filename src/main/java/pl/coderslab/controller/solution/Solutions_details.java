@@ -30,7 +30,7 @@ public class Solutions_details extends HttpServlet {
         request.setAttribute("exercise", exercise);
         request.setAttribute("user", user);
         request.setAttribute("description", description);
-        getServletContext().getRequestDispatcher("/solutionDetails.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/views/solution//solutionDetails.jsp").forward(request, response);
 
     }
 }

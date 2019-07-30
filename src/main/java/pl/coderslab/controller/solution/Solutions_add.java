@@ -63,7 +63,7 @@ public class Solutions_add extends HttpServlet {
 
         request.setAttribute("users", users);
         request.setAttribute("exercises", exercises);
-        getServletContext().getRequestDispatcher("/solutionAdd.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/views/solution/solutionAdd.jsp").forward(request, response);
 
 
     }

@@ -21,7 +21,7 @@ public class Admin_groups extends HttpServlet {
         Group[] groups = dao.findAll();
 
         request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/adminGroups.jsp")
+        getServletContext().getRequestDispatcher("/views/group/adminGroups.jsp")
                 .forward(request,response);
     }
 }

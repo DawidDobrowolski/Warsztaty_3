@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf" %>
+<%@include file="../../fragments/header.jspf" %>
 <br>
 <a href="/admin/groups/add">Dodaj nowa grupe</a>
 <br>
@@ -33,6 +33,6 @@
         </tr>
     </c:forEach>
 </table>
-<%@include file="fragments/footer.jspf" %>
+<%@include file="../../fragments/footer.jspf" %>
 </body>
 </html>

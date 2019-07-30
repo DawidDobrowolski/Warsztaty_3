@@ -23,7 +23,7 @@ public class Admin_exercisesDetails extends HttpServlet {
         Exercise exercise = exerciseDao.read(exerciseId);
 
         request.setAttribute("exercise", exercise);
-        getServletContext().getRequestDispatcher("/adminExercises_Details.jsp")
+        getServletContext().getRequestDispatcher("/views/exercise/adminExercises_Details.jsp")
                 .forward(request,response);
     }
 }

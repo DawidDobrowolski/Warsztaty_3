@@ -23,7 +23,7 @@ public class Users_home extends HttpServlet {
         User[] users = dao.findAllByGroupID(groupId);
 
         request.setAttribute("users", users);
-        getServletContext().getRequestDispatcher("/users.jsp")
+        getServletContext().getRequestDispatcher("/views/user/users.jsp")
                 .forward(request,response);
     }
 }

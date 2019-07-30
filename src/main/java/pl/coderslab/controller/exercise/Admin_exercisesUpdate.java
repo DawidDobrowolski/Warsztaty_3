@@ -36,7 +36,7 @@ public class Admin_exercisesUpdate extends HttpServlet {
         exercise = exerciseDao.read(exerciseId);
 
         request.setAttribute("exercise", exercise);
-        getServletContext().getRequestDispatcher("/adminExercises_Update.jsp")
+        getServletContext().getRequestDispatcher("/views/exercise/adminExercises_Update.jsp")
                 .forward(request, response);
 
     }

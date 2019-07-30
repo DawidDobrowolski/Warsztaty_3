@@ -24,7 +24,7 @@ public class Admin_exercisesAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/adminExercises_Add.jsp");
+        response.sendRedirect("/views/exercise/adminExercises_Add.jsp");
 
     }
 }

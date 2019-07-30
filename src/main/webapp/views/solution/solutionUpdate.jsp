@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf"%>
+<%@include file="../../fragments/header.jspf"%>
 
 <form method="post" action="/solutions/update">
     <div>
@@ -47,6 +47,6 @@ ${description}</textarea>
     <br>
     <input type="submit" value="Edytuj rozwiazanie">
 </form>
-<%@include file="fragments/footer.jspf"%>
+<%@include file="../../fragments/footer.jspf"%>
 </body>
 </html>

@@ -22,7 +22,7 @@ public class HomeServlet extends HttpServlet {
         Solution[] solutions = dao.findNumberOf(homeNumberOfSolutions);
 
         request.setAttribute("solutions", solutions);
-        getServletContext().getRequestDispatcher("/solutions.jsp")
+        getServletContext().getRequestDispatcher("/views/solution/solutions.jsp")
                 .forward(request,response);
     }
 }

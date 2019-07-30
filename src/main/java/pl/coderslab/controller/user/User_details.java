@@ -29,7 +29,7 @@ public class User_details extends HttpServlet {
 
         request.setAttribute("user", user);
         request.setAttribute("solutions", solutions);
-        getServletContext().getRequestDispatcher("/user.jsp")
+        getServletContext().getRequestDispatcher("/views/user/user.jsp")
                 .forward(request,response);
     }
 }

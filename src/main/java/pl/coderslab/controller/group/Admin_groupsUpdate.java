@@ -34,7 +34,7 @@ public class Admin_groupsUpdate extends HttpServlet {
         group = groupDao.read(groupId);
 
         request.setAttribute("group", group);
-        getServletContext().getRequestDispatcher("/adminGroups_Update.jsp")
+        getServletContext().getRequestDispatcher("/views/group/adminGroups_Update.jsp")
                 .forward(request, response);
 
     }

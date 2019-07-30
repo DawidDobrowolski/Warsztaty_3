@@ -23,7 +23,7 @@ public class Admin_exercises extends HttpServlet {
         Exercise[] exercises = dao.findAll();
 
         request.setAttribute("exercises", exercises);
-        getServletContext().getRequestDispatcher("/adminExercises.jsp")
+        getServletContext().getRequestDispatcher("/views/exercise/adminExercises.jsp")
                 .forward(request,response);
     }
 }

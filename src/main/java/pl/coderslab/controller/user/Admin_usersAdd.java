@@ -45,7 +45,7 @@ public class Admin_usersAdd extends HttpServlet {
         groups = groupDao.findAll();
 
         request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/adminUsers_Add.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/views/user/adminUsers_Add.jsp").forward(request, response);
 
 
     }

@@ -21,7 +21,7 @@ public class Groups_home extends HttpServlet {
         Group[] groups = dao.findAll();
 
         request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/groups.jsp")
+        getServletContext().getRequestDispatcher("/views/group/groups.jsp")
                 .forward(request,response);
     }
 }

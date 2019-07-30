@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<%@include file="fragments/header.jspf" %>
+<%@include file="../../fragments/header.jspf" %>
 
 <h2>Lista grup: </h2>
 <table border="1">
@@ -29,7 +29,7 @@
         </tr>
     </c:forEach>
 </table>
-<%@include file="fragments/footer.jspf" %>
+<%@include file="../../fragments/footer.jspf" %>
 
 </body>
 </html>

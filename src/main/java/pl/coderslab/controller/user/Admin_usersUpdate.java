@@ -52,7 +52,7 @@ public class Admin_usersUpdate extends HttpServlet {
 
         request.setAttribute("user", user);
         request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/adminUsers_Update.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/views/user/adminUsers_Update.jsp").forward(request, response);
 
     }
 }

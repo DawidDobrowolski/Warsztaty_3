@@ -23,7 +23,7 @@ public class Admin_groupsAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/adminGroups_Add.jsp");
+        response.sendRedirect("/views/group/adminGroups_Add.jsp");
 
     }
 }

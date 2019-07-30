@@ -21,7 +21,7 @@ public class Admin_users extends HttpServlet {
         User[] users = dao.findAll();
 
         request.setAttribute("users", users);
-        getServletContext().getRequestDispatcher("/adminUsers.jsp")
+        getServletContext().getRequestDispatcher("/views/user/adminUsers.jsp")
                 .forward(request,response);
     }
 }
