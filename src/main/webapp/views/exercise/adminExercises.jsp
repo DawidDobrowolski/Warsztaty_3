@@ -14,21 +14,21 @@
 <body>
 <%@include file="../../fragments/header.jspf" %>
 <br>
-<a href="/admin/exercises/add">Dodaj nowe zadanie </a>
+<a href="/admin/exercises/add">Add new exercise</a>
 <br>
-<h2>Lista zadan: </h2>
+<h2>Exercise list: </h2>
 <table border="1">
     <tr>
-        <th>Nazwa zadania</th>
+        <th>Exercise name</th>
         <th>Actions</th>
     </tr>
     <c:forEach items="${exercises}" var="exercise">
         <tr>
             <td>${exercise.title}</td>
             <td>
-                <a href="/admin/exercises/details?id=${exercise.id}">Szczegoly</a>
-                <a href="/admin/exercises/update?id=${exercise.id}">Edytuj</a>
-                <a href="/admin/exercises/delete?id=${exercise.id}">Usun</a>
+                <a href="/admin/exercises/details?id=${exercise.id}">Details</a>
+                <a href="/admin/exercises/update?id=${exercise.id}">Edit</a>
+                <a href="/admin/exercises/delete?id=${exercise.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

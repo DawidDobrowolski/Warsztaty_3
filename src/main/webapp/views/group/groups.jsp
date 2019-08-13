@@ -14,17 +14,17 @@
 <body>
 <%@include file="../../fragments/header.jspf" %>
 
-<h2>Lista grup: </h2>
+<h2>Group list: </h2>
 <table border="1">
     <tr>
-        <th>Nazwa grupy</th>
+        <th>Group name</th>
         <th>Actions</th>
     </tr>
     <c:forEach items="${groups}" var="group">
         <tr>
             <td>${group.name}</td>
             <td>
-                <a href="/groups/users?id=${group.id}">Uzytkownicy</a>
+                <a href="/groups/users?id=${group.id}">Users</a>
             </td>
         </tr>
     </c:forEach>

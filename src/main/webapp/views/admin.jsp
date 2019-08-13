@@ -9,15 +9,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
-    <script src="<c:url value="../resources/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
-    <script src="<c:url value="../resources/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
-    <link href="<c:url value="../resources/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
+    <title>Admin</title>
     <link rel="stylesheet" href="<c:url value="/css/main.css"/>"></head>
 <body>
-<h1>Panel administracyjny</h1>
-<h2><a href="/admin/groups">Zarzadzanie grupami uzytkownikow</a></h2>
-<h2><a href="/admin/users">Zarzadzanie uzytkownikami</a></h2>
-<h2><a href="/admin/exercises">Zarzadzanie zadaniami</a></h2>
+<h1>Administrative panel</h1>
+<h2><a href="/admin/groups">Manage user groups</a></h2>
+<h2><a href="/admin/users">Manage users</a></h2>
+<h2><a href="/admin/exercises">Manage exercises</a></h2>
 </body>
 </html>

@@ -11,13 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Dodanie nowej grupy</h2>
+<h2>Add new group</h2>
 <form action="/admin/groups/add" method="POST">
     <label>
         Name:
         <input type="text" name="name">
     </label>
-    <input type="submit" value="Stworz nowa grupe">
+    <input type="submit" value="Create new group">
 </form>
 </body>
 </html>

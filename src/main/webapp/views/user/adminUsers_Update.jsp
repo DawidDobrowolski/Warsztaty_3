@@ -12,10 +12,10 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Edycja uzytkownika</h2>
+<h2>Edit user</h2>
 <form method="post" action="/admin/users/update">
     <div>
-        Prosze wybrac grupe:
+        Select user group:
         <select name="group">
             <c:forEach items="${groups}" var="group">
                 <option
@@ -42,7 +42,7 @@
             <input type="password" name="password">
         </label>
     </div>
-    <input type="submit" value="Edytuj uzytkownika">
+    <input type="submit" value="Update user data">
 </form>
 </body>
 </html>

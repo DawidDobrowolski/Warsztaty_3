@@ -11,13 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Edycja wybranej grupy</h2>
+<h2>Edit group</h2>
 <form action="/admin/groups/update" method="POST">
     <label>
         Name:
         <input type="text" name="name" value="${group.name}">
     </label>
-    <input type="submit" value="Zaktualizuj dane grupy">
+    <input type="submit" value="Update group data">
 </form>
 </body>
 </html>

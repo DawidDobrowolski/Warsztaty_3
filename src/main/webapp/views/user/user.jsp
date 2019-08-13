@@ -15,7 +15,7 @@
 <%@include file="../../fragments/header.jspf"%>
 <h3>Username: </h3>${user.username}
 <h3>Email: </h3>${user.email}
-<h3>Dodane rozwiazania zadan: </h3>
+<h3>Added solutions to exercises: </h3>
 
 
 <table border="1">
@@ -29,7 +29,7 @@
             <td>${solution.exercise.title}</td>
             <td>${solution.updated}</td>
             <td>
-                <a href="/solutions/details?id=${solution.id}">Szczegoly</a>
+                <a href="/solutions/details?id=${solution.id}">Details</a>
             </td>
         </tr>
     </c:forEach>

@@ -16,7 +16,7 @@
 
 <form method="post" action="/solutions/update">
     <div>
-        <h2>Prosze wybrac cwiczenie: </h2>
+        <h2>Select exercise: </h2>
         <select name="exercise" >
 
             <c:forEach items="${exercises}" var="ex">
@@ -28,7 +28,7 @@
     </div>
     <br>
     <div>
-        <h2>Prosze wybrac uzytkownika: </h2>
+        <h2>Select user: </h2>
         <select name="user">
 
             <c:forEach items="${users}" var="us">
@@ -40,12 +40,12 @@
     </div>
     <br>
     <div>
-        <h2>Opis rozwiazania: </h2>
-        <textarea name="description" rows="4" cols="50" placeholder="Prosze wpisac opis rozwiazania...">
+        <h2>Solution description: </h2>
+        <textarea name="description" rows="4" cols="50" placeholder="Please enter solution description...">
 ${description}</textarea>
     </div>
     <br>
-    <input type="submit" value="Edytuj rozwiazanie">
+    <input type="submit" value="Edit solution">
 </form>
 <%@include file="../../fragments/footer.jspf"%>
 </body>

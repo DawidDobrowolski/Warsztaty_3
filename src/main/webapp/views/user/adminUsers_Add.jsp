@@ -12,10 +12,10 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Dodanie nowego uzytkownika</h2>
+<h2>Add new user</h2>
 <form method="post" action="/admin/users/add">
     <div>
-        Prosze wybrac grupe:
+       Select user group:
         <select name="group">
             <c:forEach items="${groups}" var="group">
                 <option value="${group.id}">${group.name}</option>
@@ -40,7 +40,7 @@
         <input type="password" name="password">
     </label>
     </div>
-    <input type="submit" value="Stworz nowego uzytkownika">
+    <input type="submit" value="Create new user">
 </form>
 </body>
 </html>

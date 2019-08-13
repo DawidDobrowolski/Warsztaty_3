@@ -14,20 +14,20 @@
 <body>
 <%@include file="../../fragments/header.jspf" %>
 <br>
-<a href="/admin/groups/add">Dodaj nowa grupe</a>
+<a href="/admin/groups/add">Add new group</a>
 <br>
-<h2>Lista grup: </h2>
+<h2>Group list: </h2>
 <table border="1">
     <tr>
-        <th>Nazwa grupy</th>
+        <th>Group name</th>
         <th>Actions</th>
     </tr>
     <c:forEach items="${groups}" var="group">
         <tr>
             <td>${group.name}</td>
             <td>
-                <a href="/admin/groups/update?id=${group.id}">Edytuj</a>
-                <a href="/admin/groups/delete?id=${group.id}">Usun</a>
+                <a href="/admin/groups/update?id=${group.id}">Edit</a>
+                <a href="/admin/groups/delete?id=${group.id}">Delete</a>
 
             </td>
         </tr>

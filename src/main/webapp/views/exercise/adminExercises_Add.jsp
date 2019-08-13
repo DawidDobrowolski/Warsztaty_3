@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Dodanie nowego zadania</h2>
+<h2>Add new exercise</h2>
 <form action="/admin/exercises/add" method="POST">
     <div>
     <label>
@@ -20,11 +20,11 @@
     </label>
     </div>
     <div>
-        <h2>Opis zadania: </h2>
-        <textarea name="description" rows="4" cols="50" placeholder="Prosze wpisac opis zadania...">
+        <h2>Exercise description: </h2>
+        <textarea name="description" rows="4" cols="50" placeholder="Please enter exercise description...">
 </textarea>
     </div>
-    <input type="submit" value="Stworz nowe zadanie">
+    <input type="submit" value="Create new exercise">
 </form>
 </body>
 </html>

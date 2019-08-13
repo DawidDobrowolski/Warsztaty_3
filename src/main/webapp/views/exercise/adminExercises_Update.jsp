@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Edycja wybranego zadania</h2>
+<h2>Edit exercise</h2>
 <form action="/admin/exercises/update" method="POST">
     <div>
     <label>
@@ -21,10 +21,10 @@
     </div>
     <div>
     <h2>Opis zadania: </h2>
-    <textarea name="description" rows="4" cols="50" placeholder="Prosze wpisac opis zadania...">
+    <textarea name="description" rows="4" cols="50" placeholder="Please enter exercise description...">
 ${exercise.description}</textarea>
     </div>
-    <input type="submit" value="Zaktualizuj dane zadania">
+    <input type="submit" value="Update exercise data">
 </form>
 </body>
 </html>

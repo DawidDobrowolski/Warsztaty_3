@@ -1,24 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: dawid
-  Date: 6/14/19
-  Time: 3:19 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Solution list</title>
+    <link rel="stylesheet" href="<c:url value="/css/main.css"/>"/>
 </head>
 <body>
 <%@include file="../../fragments/header.jspf" %>
 
-<a href="/solutions/add">Dodaj nowe rozwiazanie</a>
+<a href="/solutions/add">Add new solution</a>
 <br><br>
 
-<table border="1">
+<table class="table" border="1">
     <tr>
         <th>Excercise</th>
         <th>User</th>
@@ -31,9 +23,9 @@
             <td>${solution.user.username}</td>
             <td>${solution.updated}</td>
             <td>
-                <a href="/solutions/details?id=${solution.id}">Szczegoly</a>
-                <a href="/solutions/update?id=${solution.id}">Modyfikuj</a>
-                <a href="/solutions/delete?id=${solution.id}">Usun</a>
+                <a href="/solutions/details?id=${solution.id}">Details</a>
+                <a href="/solutions/update?id=${solution.id}">Edit</a>
+                <a href="/solutions/delete?id=${solution.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>

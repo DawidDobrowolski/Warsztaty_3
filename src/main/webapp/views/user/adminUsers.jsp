@@ -14,14 +14,14 @@
 <body>
 <%@include file="../../fragments/header.jspf" %>
 <br>
-<a href="/admin/users/add">Dodaj nowego uzytkownika</a>
+<a href="/admin/users/add">Add new user</a>
 <br>
-<h2>Lista uzytkownikow: </h2>
+<h2>User list: </h2>
 <table border="1">
     <tr>
-        <th>Nazwa uzytkownika</th>
+        <th>User name</th>
         <th>E-mail</th>
-        <th>Grupa</th>
+        <th>User group</th>
         <th>Actions</th>
     </tr>
     <c:forEach items="${users}" var="us">
@@ -30,8 +30,8 @@
             <td>${us.email}</td>
             <td>${us.group.name}</td>
             <td>
-                <a href="/admin/users/update?id=${us.id}">Edytuj</a>
-                <a href="/admin/users/delete?id=${us.id}">Usun</a>
+                <a href="/admin/users/update?id=${us.id}">Edit</a>
+                <a href="/admin/users/delete?id=${us.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>
